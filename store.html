@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style/style.css" />
+    <title>Home Page</title>
+  </head>
+  <body>
+    <!-- NavBar -->
+    <nav class="navbar navbar-expand-lg bg-dt">
+      <div class="container-fluid">
+        <ul class="navbar-nav me-auto ms-auto nav-margin">
+          <li class="nav-item">
+            <a
+              class="nav-link active text-light fs-5"
+              aria-current="page"
+              href="./index.html"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light fs-5 disabled" href="#">Store</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light fs-5" href="./order.html">Order</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light fs-5" href="./about.html">About</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <button
+              class="nav-link text-light fs-5 bg-dark"
+              onclick="showCart(this)"
+            >
+              Cart
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="header-main d-flex justify-content-center">
+      <h1 class="fs-1">The Generics</h1>
+    </div>
+    <!-- Section -->
+    <section id="section"></section>
+
+    <!-- Cart -->
+
+    <div class="cart-position d-none" id="cart">
+      <div class="card" style="width: 35rem; height: auto">
+        <div class="fs-1 d-flex justify-content-center">
+          Cart
+          <div>
+            <button
+              class="fs-5 position-absolute end-0 btn btn-primary"
+              onclick="closeCart(this)"
+            >
+              x
+            </button>
+          </div>
+        </div>
+        <div class="card-body" id="cart-body">
+          <div class="cart-header d-flex justify-content-center">
+            <div class="card-title">ITEM</div>
+            <div class="card-title">PRICE</div>
+            <div class="card-title">QUANTITY</div>
+          </div>
+
+          <div class="cart-details d-flex justify-content-end" id="cart-add">
+            <div>Total :</div>
+            <div>
+              <span>₹<span id="cart-sub-total">00.00</span></span>
+            </div>
+          </div>
+          <div class="cart-purchase">
+            <button class="btn btn-primary">Purchase</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast-notification" id="toast-container"></div>
+
+    <!-- Footer -->
+
+    <footer
+      class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
+      style="background-color: black"
+    >
+      <div class="col-md-4 d-flex align-items-center">
+        <a
+          href="/"
+          class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1"
+        >
+          <svg class="bi" width="30" height="24">
+            <use xlink:href="#bootstrap"></use>
+          </svg>
+        </a>
+        <span class="text-light">© 2022 The Generics</span>
+      </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./scripts/main.js"></script>
+    <script src="./scripts/store.js"></script>
+  </body>
+</html>
